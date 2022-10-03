@@ -343,9 +343,9 @@ index.js
 index.cjs
 _configurable.d.ts
 
-**/active_element
-**/clipboard
-**/dom_visible
-**/event_listener
-**/permission
-**/supported
+/active_element
+/clipboard
+/dom_visible
+/event_listener
+/permission
+/supported

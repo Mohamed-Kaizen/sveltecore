@@ -88,7 +88,7 @@ export async function gitignore() {
 		cwd: DIR_SRC,
 		ignore: ["_*", "dist", "node_modules"],
 	})
-	files = files.map((f) => `**/${f}`)
+	files = files.map((f) => `/${f}`)
 
 	const gitignorePath = path.join(DIR_ROOT, ".gitignore")
 
