@@ -350,3 +350,4 @@ _configurable.d.ts
 /geolocation
 /permission
 /supported
+/websocket
