@@ -348,6 +348,7 @@ _configurable.d.ts
 /clipboard
 /dom_visible
 /event_listener
+/eye_dropper
 /geolocation
 /permission
 /supported
