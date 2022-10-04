@@ -349,6 +349,7 @@ _configurable.d.ts
 /dom_visible
 /event_listener
 /eye_dropper
+/favicon
 /geolocation
 /permission
 /supported
