@@ -1,4 +1,5 @@
 export * from './active_element'
+export * from './broadcast_channel'
 export * from './clipboard'
 export * from './dom_visible'
 export * from './event_listener'
