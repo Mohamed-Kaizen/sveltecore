@@ -23,6 +23,7 @@
         "build:types": "tsc --project tsconfig.json",
         "build:files": "node scripts/build.mjs",
         "clean": "node scripts/clean.mjs",
+        "git:add": "pnpm run build && pnpm run clean && git add .",
         "commit": "cz commit",
         "coverage": "vitest run --coverage",
         "lint": "eslint .",

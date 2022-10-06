@@ -349,6 +349,7 @@ _configurable.d.ts
 /dom_visible
 /drop_zone
 /element_bounding
+/element_size
 /event_listener
 /eye_dropper
 /favicon

@@ -7,8 +7,8 @@ import { supported } from "../supported"
 import type { ConfigurableWindow } from "../_configurable"
 
 export interface ResizeObserverSize {
-	readonly inline_size: number
-	readonly block_size: number
+	readonly inlineSize: number
+	readonly blockSize: number
 }
 
 export interface ResizeObserverEntry {
