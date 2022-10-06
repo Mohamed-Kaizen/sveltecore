@@ -347,6 +347,7 @@ _configurable.d.ts
 /broadcast_channel
 /clipboard
 /dom_visible
+/drop_zone
 /event_listener
 /eye_dropper
 /favicon
