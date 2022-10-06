@@ -355,6 +355,7 @@ _configurable.d.ts
 /favicon
 /file_dialog
 /geolocation
+/intersection_observer
 /permission
 /resize_observer
 /supported
