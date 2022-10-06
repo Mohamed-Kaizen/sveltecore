@@ -363,3 +363,4 @@ _configurable.d.ts
 /websocket
 /window_focus
 /window_scroll
+/window_size
