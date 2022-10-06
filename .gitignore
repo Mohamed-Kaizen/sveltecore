@@ -362,3 +362,4 @@ _configurable.d.ts
 /supported
 /websocket
 /window_focus
+/window_scroll
