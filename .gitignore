@@ -354,5 +354,6 @@ _configurable.d.ts
 /file_dialog
 /geolocation
 /permission
+/resize_observer
 /supported
 /websocket
