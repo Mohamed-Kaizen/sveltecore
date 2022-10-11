@@ -364,6 +364,7 @@ _configurable.d.ts
 /preferred_contrast
 /preferred_dark
 /preferred_languages
+/preferred_reduced_motion
 /resize_observer
 /supported
 /websocket
