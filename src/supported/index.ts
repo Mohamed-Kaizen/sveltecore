@@ -3,7 +3,7 @@ import { is_client, to_writable } from "svelteshareds"
 import type { Readable } from "svelte/store"
 
 export interface SupportedOptions {
-	from?: "navigator" | "window" | "document"
+	from?: "navigator" | "window" | "document" | "performance"
 }
 
 export function supported(
@@ -20,7 +20,9 @@ export function supported(
 				? navigator
 				: from === "window"
 				? window
-				: document
+				: from === "document"
+				? document
+				: performance
 
 		set(_from && target in _from)
 	}
