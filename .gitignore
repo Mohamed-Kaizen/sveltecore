@@ -359,6 +359,7 @@ _configurable.d.ts
 /media_query
 /mutation_observer
 /permission
+/preferred_dark
 /resize_observer
 /supported
 /websocket
