@@ -357,6 +357,7 @@ _configurable.d.ts
 /geolocation
 /intersection_observer
 /media_query
+/memory
 /mutation_observer
 /permission
 /preferred_contrast
