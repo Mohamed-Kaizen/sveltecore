@@ -367,6 +367,7 @@ _configurable.d.ts
 /preferred_reduced_motion
 /resize_observer
 /supported
+/text_direction
 /websocket
 /window_focus
 /window_scroll
