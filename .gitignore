@@ -356,6 +356,7 @@ _configurable.d.ts
 /file_dialog
 /geolocation
 /intersection_observer
+/media_query
 /mutation_observer
 /permission
 /resize_observer
