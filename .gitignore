@@ -363,6 +363,7 @@ _configurable.d.ts
 /permission
 /preferred_contrast
 /preferred_dark
+/preferred_languages
 /resize_observer
 /supported
 /websocket
