@@ -366,6 +366,7 @@ _configurable.d.ts
 /preferred_dark
 /preferred_languages
 /preferred_reduced_motion
+/raf_fn
 /resize_observer
 /supported
 /text_direction
