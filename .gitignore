@@ -359,6 +359,7 @@ _configurable.d.ts
 /media_query
 /memory
 /mutation_observer
+/notification
 /object_url
 /permission
 /preferred_contrast
