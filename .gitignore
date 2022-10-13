@@ -369,6 +369,7 @@ _configurable.d.ts
 /resize_observer
 /supported
 /text_direction
+/wake_lock
 /websocket
 /window_focus
 /window_scroll
