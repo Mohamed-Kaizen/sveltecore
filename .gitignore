@@ -360,6 +360,7 @@ _configurable.d.ts
 /media_query
 /memory
 /mutation_observer
+/network
 /notification
 /object_url
 /permission
