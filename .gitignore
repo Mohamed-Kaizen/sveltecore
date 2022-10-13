@@ -354,6 +354,7 @@ _configurable.d.ts
 /eye_dropper
 /favicon
 /file_dialog
+/fps
 /geolocation
 /intersection_observer
 /media_query
