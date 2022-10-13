@@ -373,3 +373,4 @@ _configurable.d.ts
 /window_focus
 /window_scroll
 /window_size
+/worker
