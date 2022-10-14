@@ -363,6 +363,7 @@ _configurable.d.ts
 /intersection_observer
 /media_query
 /memory
+/mouse
 /mutation_observer
 /network
 /notification
