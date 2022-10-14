@@ -344,6 +344,7 @@ index.cjs
 _configurable.d.ts
 
 /active_element
+/breakpoints
 /broadcast_channel
 /clipboard
 /dom_visible
