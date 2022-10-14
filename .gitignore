@@ -359,6 +359,7 @@ _configurable.d.ts
 /fps
 /fullscreen
 /geolocation
+/image
 /intersection_observer
 /media_query
 /memory
