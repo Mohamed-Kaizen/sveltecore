@@ -54,7 +54,7 @@ export function raf_fn(fn: Fn, options: RafFnOptions = {}): Pauseable {
 	onDestroy(pause)
 
 	return {
-		isActive: to_readable(active),
+		is_active: to_readable(active),
 		pause,
 		resume,
 	}
