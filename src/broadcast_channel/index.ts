@@ -1,5 +1,10 @@
-import { onDestroy } from "svelte"
-import { is_client, to_readable, to_writable, unstore } from "svelteshareds"
+import {
+	is_client,
+	to_readable,
+	to_writable,
+	try_on_destroy,
+	unstore,
+} from "svelteshareds"
 
 import { event_listener } from "../event_listener"
 import { supported } from "../supported"
@@ -91,7 +96,7 @@ export const broadcast_channel = <D, P>(
 		}
 	}
 
-	onDestroy(close)
+	try_on_destroy(close)
 
 	return {
 		is_supported,
