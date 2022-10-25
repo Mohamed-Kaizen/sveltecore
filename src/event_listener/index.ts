@@ -1,5 +1,4 @@
-import { onDestroy } from "svelte"
-import { is_string, noop } from "svelteshareds"
+import { is_string, noop, try_on_destroy } from "svelteshareds"
 
 import { default_window } from "../_configurable"
 
@@ -120,7 +119,7 @@ export function event_listener(...args: any[]) {
 		target?.removeEventListener(event, listener, options)
 	}
 
-	onDestroy(cleanup)
+	try_on_destroy(cleanup)
 
 	return cleanup
 }
