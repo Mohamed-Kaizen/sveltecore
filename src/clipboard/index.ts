@@ -94,7 +94,7 @@ export function clipboard(
 
 	async function copy(value = source) {
 		if (unstore(is_supported) && value != null) {
-			if (unstore(clipboard_supported))
+			if (unstore(clipboard_supported) && !legacy)
 				await navigator?.clipboard.writeText(value)
 			else legacy_copy(value)
 
