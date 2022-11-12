@@ -28,6 +28,13 @@ export interface ClipboardOptions<Source> extends ConfigurableNavigator {
 	 * @default 1500
 	 */
 	copied_during?: number
+
+	/**
+	 * Whether fallback to document.execCommand('copy') if clipboard is undefined.
+	 *
+	 * @default false
+	 */
+	legacy?: boolean
 }
 
 export interface ClipboardReturn<Optional> {
@@ -58,11 +65,14 @@ export function clipboard(
 		read = false,
 		source,
 		copied_during = 1500,
+		legacy = false,
 	} = options
 
 	const events = ["copy", "cut"]
 
-	const is_supported = supported("clipboard")
+	const clipboard_supported = supported("clipboard")
+
+	const is_supported = to_readable(clipboard_supported || legacy)
 
 	const text = to_writable("")
 
@@ -71,8 +81,10 @@ export function clipboard(
 	const timeout = timeout_fn(() => copied.set(false), copied_during)
 
 	async function update_text() {
-		const value = (await navigator?.clipboard.readText()) ?? ""
-		text.set(value)
+		if (unstore(clipboard_supported)) {
+			const value = (await navigator?.clipboard.readText()) ?? ""
+			text.set(value)
+		} else text.set(legacy_read())
 	}
 
 	if (unstore(is_supported) && read) {
@@ -82,7 +94,9 @@ export function clipboard(
 
 	async function copy(value = source) {
 		if (unstore(is_supported) && value != null) {
-			await navigator?.clipboard.writeText(value)
+			if (unstore(clipboard_supported))
+				await navigator?.clipboard.writeText(value)
+			else legacy_copy(value)
 
 			text.set(value)
 
@@ -90,6 +104,21 @@ export function clipboard(
 
 			timeout.start()
 		}
+	}
+
+	function legacy_copy(value: string) {
+		const ta = document.createElement("textarea")
+		ta.value = value ?? ""
+		ta.style.position = "absolute"
+		ta.style.opacity = "0"
+		document.body.appendChild(ta)
+		ta.select()
+		document.execCommand("copy")
+		ta.remove()
+	}
+
+	function legacy_read() {
+		return document?.getSelection?.()?.toString() ?? ""
 	}
 
 	return {
