@@ -11,13 +11,12 @@ import { supported } from "../supported"
 
 import type { Readable } from "svelte/store"
 
-import type { ConfigurableWindow } from "../_configurable"
-
-export interface BroadcastChannelOptions extends ConfigurableWindow {
+export interface BroadcastChannelOptions {
 	/**
 	 * The name of the channel.
+	 * @default ""
 	 */
-	name: string
+	name?: string
 }
 
 export interface BroadcastChannelReturn<D, P> {
@@ -43,9 +42,9 @@ export interface BroadcastChannelReturn<D, P> {
  *
  */
 export const broadcast_channel = <D, P>(
-	options: BroadcastChannelOptions
+	options: BroadcastChannelOptions = {}
 ): BroadcastChannelReturn<D, P> => {
-	const { name } = options
+	const { name = "" } = options
 
 	const is_supported = supported("BroadcastChannel", { from: "window" })
 	const is_closed = to_writable(false)
