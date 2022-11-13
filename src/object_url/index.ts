@@ -1,4 +1,4 @@
-import { onDestroy } from "svelte"
+import { try_on_destroy } from "svelteshareds"
 
 /**
  * URL representing an object.
@@ -18,7 +18,7 @@ export function object_url(object: Blob | MediaSource | undefined) {
 
 	if (object) url = URL.createObjectURL(object)
 
-	onDestroy(release)
+	try_on_destroy(release)
 
 	return url
 }
