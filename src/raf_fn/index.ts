@@ -1,5 +1,9 @@
-import { onDestroy } from "svelte"
-import { to_readable, to_writable, unstore } from "svelteshareds"
+import {
+	to_readable,
+	to_writable,
+	try_on_destroy,
+	unstore,
+} from "svelteshareds"
 
 import { default_window as window } from "../_configurable"
 
@@ -51,7 +55,7 @@ export function raf_fn(fn: Fn, options: RafFnOptions = {}): Pauseable {
 
 	if (immediate) resume()
 
-	onDestroy(pause)
+	try_on_destroy(pause)
 
 	return {
 		is_active: to_readable(active),
