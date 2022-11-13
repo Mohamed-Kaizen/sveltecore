@@ -1,5 +1,9 @@
-import { onDestroy } from "svelte"
-import { to_readable, to_writable, unstore } from "svelteshareds"
+import {
+	to_readable,
+	to_writable,
+	try_on_destroy,
+	unstore,
+} from "svelteshareds"
 
 import { async_state } from "../async_state"
 import { supported } from "../supported"
@@ -91,7 +95,7 @@ export function useragent() {
 			brands.set(_brands)
 		})
 
-		onDestroy(unsubscribe)
+		try_on_destroy(unsubscribe)
 	}
 
 	return {
