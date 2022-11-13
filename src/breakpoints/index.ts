@@ -130,7 +130,7 @@ export function breakpoints<K extends string>(breakpoints: Breakpoints<K>) {
 			return match(`(max-width: ${get_value(k, -0.1)})`)
 		},
 
-		isSmallerOrEqual(k: K) {
+		is_smaller_or_equal(k: K) {
 			return match(`(max-width: ${get_value(k)})`)
 		},
 		is_in_between(a: K, b: K) {
