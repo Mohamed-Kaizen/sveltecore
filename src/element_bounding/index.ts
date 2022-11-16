@@ -1,6 +1,6 @@
-import { onMount } from "svelte"
 import { to_writable } from "svelteshareds"
 
+import { default_window as window } from "../_configurable"
 import { event_listener } from "../event_listener"
 import { resize_observer } from "../resize_observer"
 
@@ -112,9 +112,7 @@ export function element_bounding(
 
 	if (window_resize) event_listener("resize", update, { passive: true })
 
-	onMount(() => {
-		if (immediate) update()
-	})
+	if (window && immediate) update()
 
 	return {
 		height,
