@@ -1,10 +1,7 @@
-import { onDestroy } from "svelte"
-import { unstore } from "svelteshareds"
+import { try_on_destroy, unstore } from "svelteshareds"
 
-import { default_window } from "../_configurable"
+import { default_window as window } from "../_configurable"
 import { supported } from "../supported"
-
-import type { ConfigurableWindow } from "../_configurable"
 
 export interface ResizeObserverSize {
 	readonly inlineSize: number
@@ -24,7 +21,7 @@ export type ResizeObserverCallback = (
 	observer: ResizeObserver
 ) => void
 
-export interface ResizeObserverOptions extends ConfigurableWindow {
+export interface ResizeObserverOptions {
 	/**
 	 * Sets which box model the observer will observe changes to. Possible values
 	 * are `content-box` (the default), `border-box` and `device-pixel-content-box`.
@@ -53,7 +50,7 @@ export function resize_observer(
 	callback: ResizeObserverCallback,
 	options: ResizeObserverOptions = {}
 ) {
-	const { window = default_window, ...observerOptions } = options
+	const { ...observerOptions } = options
 
 	let observer: ResizeObserver | undefined
 
@@ -72,7 +69,7 @@ export function resize_observer(
 		observer?.observe(target, observerOptions)
 	}
 
-	onDestroy(cleanup)
+	try_on_destroy(cleanup)
 
 	return {
 		is_supported,
